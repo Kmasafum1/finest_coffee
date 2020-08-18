@@ -1,3 +1,19 @@
 * {
   box-sizing: border-box;
 }
+.header{
+  padding: 0 60px;
+  .headerInner{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+  }
+  &__main{
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+  } 
+}
