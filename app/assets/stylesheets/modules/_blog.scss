@@ -58,3 +58,56 @@ body {
   font-size: 15px;
   text-decoration: none;
 }
+
+// 新規投稿ページ
+
+.container{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3rem !important;
+  &__{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+  }
+  &__box h2{
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 35px;
+  }
+}
+.form-group{
+  margin-bottom: 15px;
+}
+.form-group label{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.form-control{
+  height: 48px;
+  padding: 10px 46px 8px;
+  border-radius: 4px;
+  &__area{
+    height: 48px;
+    padding: 10px 46px 80px;
+    border-radius: 4px;
+  }
+}
+.contents h2{
+  margin: 50px 0;
+  font-size: 26px;
+}
+.columns{
+  a{
+    text-decoration: none;
+    color: rgba($color: #000000, $alpha: 1.0);
+  }
+}
+.blogList{
+  margin: 0 auto 40px;
+}

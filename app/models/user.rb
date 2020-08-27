@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
-  devise :validatable, password_length: 7..128       
+  devise :validatable, password_length: 7..128  
+  has_many :blogs, dependent: :destroy
 end
