@@ -15,3 +15,20 @@
         .loginlist
           = link_to "ログイン", new_user_session_path, class: "login"
           = link_to "新規登録", new_user_registration_path, class: "register"
+  .section
+    .contents
+      %h2 
+        コーヒーの楽しさを知る
+      .columns
+        - @blogs.each do |blog|
+          = link_to blog_path(blog.id) do
+            %section
+              .blogList
+                .blogList__image
+                  = image_tag blog.image.url size: '220x150' 
+                .blogList__body
+                  = blog.title
+                .blogList__author
+                  = blog.user.name
+
+      
