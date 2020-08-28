@@ -1,34 +1,18 @@
-%Body
-  .header
-    %h3.title
-      %a{:href => "/"} finest_coffee
-    = form_with(url: search_blogs_path, local: true, method: :get, class: "search-form") do |form|
-      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-      = form.submit "検索", class: "search-btn"
-    .menu
-      - if user_signed_in?
-        .menulist
-          = link_to "ブログを投稿する", new_blog_path, class: "post"
-          = link_to "マイページ", user_path, class: "post"
-          = link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete
-      - else
-        .loginlist
-          = link_to "ログイン", new_user_session_path, class: "login"
-          = link_to "新規登録", new_user_registration_path, class: "register"
-  .section
-    .contents
-      %h2 
-        コーヒーの楽しさを知る
-      .columns
-        - @blogs.each do |blog|
-          = link_to blog_path(blog.id) do
-            %section
-              .blogList
-                .blogList__image
-                  = image_tag blog.image.url size: '220x150' 
-                .blogList__body
-                  = blog.title
-                .blogList__author
-                  = blog.user.name
+.section
+  .contents
+    %h2 
+      コーヒーの楽しさを知る
+    .columns
+      - @blogs.each do |blog|
+        = link_to blog_path(blog.id) do
+          %section
+            .blogList
+              .blogList__image
+                = image_tag blog.image.url size: '220x150' 
+              .blogList__body
+                = blog.title
+              .blogList__author
+                = blog.user.name
+ 
 
       

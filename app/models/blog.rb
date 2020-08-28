@@ -6,4 +6,11 @@ class Blog < ApplicationRecord
     validates :body
     # 空のタイトルとボディー（テキスト）をさせないため
   end
+  def self.search(search)
+    if search
+      Blog.where(['title LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+    else
+      Blog.all
+    end
+  end
 end

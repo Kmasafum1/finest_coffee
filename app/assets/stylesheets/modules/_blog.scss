@@ -1,8 +1,14 @@
 * {
   box-sizing: border-box;
 }
-body {
-	text-align:center;
+.overall {
+  text-align:center;  
+  background-image: image-url("/images/annie-spratt-PM4Vu1B0gxk-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+body{
+  text-align: center;
 }
 .header{
   display: flex;
@@ -110,4 +116,58 @@ body {
 }
 .blogList{
   margin: 0 auto 40px;
+}
+
+// トップページ
+
+.contents-row{
+  height: 560px;
+  &__title{
+    font-size: 26px;
+    font-family: fantasy;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: rgb(78, 36, 20);
+  }
+  &__body{
+    strong{
+      font-size: 20px;
+      font-family: monospace;
+      font-weight: 500;
+      color: rgb(78, 36, 20);
+    }
+    p {
+      font-size: 13px;
+      padding: 8px 0;
+      margin-top: 15px;
+      color: rgb(78, 36, 20);
+      font-weight: 600;
+    }
+  }
+}
+// ブログ一覧ページ
+
+.columns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blogList {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: solid 3px #000000;
+  width: 400px;
+}
+// ブログ詳細ページ
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blogList{
+  &__body{
+    font-size: 13px;
+    padding: 15px 10px;
+  }
 }

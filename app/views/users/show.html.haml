@@ -1,0 +1,7 @@
+.container
+  .container-row
+    .container-row__body
+      %h5.container-row__title= current_user.name
+      %h6.container-row__subtitle= current_user.email
+      = link_to 'ユーザー編集', edit_user_path
+        
