@@ -121,7 +121,7 @@ body{
 // トップページ
 
 .contents-row{
-  height: 560px;
+  height: 700px;
   &__title{
     font-size: 26px;
     font-family: fantasy;
@@ -135,6 +135,7 @@ body{
       font-family: monospace;
       font-weight: 500;
       color: rgb(78, 36, 20);
+      // display: none;
     }
     p {
       font-size: 13px;

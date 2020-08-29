@@ -6,7 +6,8 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    = javascript_pack_tag 'application'
   %Body
     .header
       %h3.title
@@ -24,5 +25,6 @@
         - else
           .loginlist
             = link_to "ログイン", new_user_session_path, class: "login"
-            = link_to "新規登録", new_user_registration_path, class: "register"
+            = link_to "新規登録", new_user_registration_path, class: "register"        
     = yield
+
