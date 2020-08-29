@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resource :user, except: [:new, :create, :destroy] 
   resources :blogs do
+    resource :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end

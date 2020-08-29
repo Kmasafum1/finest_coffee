@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order(id: "DESC")
+    @blogs = Blog.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
   end
 
   def new
@@ -33,8 +34,8 @@ class BlogsController < ApplicationController
   def search
     @blogs = Blog.search(params[:keyword])
     respond_to do |format|
-      format.html
-      format.json
+      format.html 
+      format.json 
     end
   end
 
