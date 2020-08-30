@@ -13,5 +13,5 @@
                 = blog.title
               .blogList__author
                 = blog.user.name
-              %div.like{:id => "likes_buttons_#{blog.id}"}
+              %div{:id => "likes_buttons_#{blog.id}"}
                 = render partial: 'likes/like', locals: { blog: blog}
