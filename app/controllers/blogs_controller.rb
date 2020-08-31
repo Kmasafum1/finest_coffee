@@ -3,6 +3,7 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all.order(id: "DESC")
     @blogs = Blog.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
+    @blogs = Blog.all.page(params[:page]).per(5)
   end
 
   def new
