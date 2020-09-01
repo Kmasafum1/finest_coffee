@@ -10,6 +10,7 @@ require("channels")
 require('jquery')
 require('../blogs')
 require('../search')
+require('../comment')
 
 
 
