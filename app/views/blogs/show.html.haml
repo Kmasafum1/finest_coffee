@@ -8,7 +8,29 @@
       .blogList__body
         = @blog.body  
       .blogList__author
-        = @blog.user.name
+        = @blog.user.name  
+      %div{:id => "likes_buttons_#{@blog.id}"}
+        = render partial: 'likes/like', locals: { blog: @blog}  
       - if @blog.user == current_user
         = link_to '編集', edit_blog_path(@blog), class: "btn btn-success"
         = link_to '削除', blog_path(@blog), method: :delete, class: "btn btn-danger"  
+      .container
+        - if current_user
+          = form_with(model: [@blog, @comment], local: true, id: "new_comment") do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
+            %br/
+            = form.submit "SEND", class: "form__submit"
+        - else
+          %strong
+            %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      .comments
+        %h4 ＜コメント一覧＞
+        - if @comments
+          - @comments.each do |comment|
+            %p
+              %strong
+                = link_to comment.user.name, "/users/#{comment.user_id}"
+                ：
+              = comment.text
+    
+        
