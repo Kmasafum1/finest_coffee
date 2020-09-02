@@ -18,8 +18,7 @@
           %i.fa.fa-image
           = f.file_field :image, class: "form-control__image"
         .form-group
-          = f.label :video
-          = f.file_field :video, :accept => 'video/*'
-  
+          %strong Youtube url:
+          = f.text_field :youtube_url, placeholder: "Youtube Url"
         %div
           = f.submit class: 'btn-success'

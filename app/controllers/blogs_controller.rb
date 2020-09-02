@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order(id: "DESC")
-    @blogs = Blog.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
+    # @blogs = Blog.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
     @blogs = Blog.all.page(params[:page]).per(5)
   end
 
@@ -13,6 +13,9 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
+    url = params[:blog][:youtube_url]
+    url = url.last(11)
+    @blog.youtube_url = url
     if @blog.save
       redirect_to blogs_path, notice: '投稿に成功しました'
     else 

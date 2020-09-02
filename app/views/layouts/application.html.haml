@@ -20,7 +20,7 @@
           .menulist
             = link_to "ブログを投稿する", new_blog_path, class: "post"
             = link_to "ブログ投稿一覧", blogs_path, class: "post"
-            = link_to "マイページ", user_path, class: "post"
+            = link_to "お気に入りマイページ", user_path, class: "post"
             = link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete
         - else
           .loginlist
