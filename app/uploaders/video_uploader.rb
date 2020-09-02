@@ -12,9 +12,9 @@ class VideoUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  def extension_whitelist
-    %w(jpg jpeg gif png MOV wmv mp4)
-  end 
+  # def extension_whitelist
+  #   %w(jpg jpeg gif png MOV wmv mp4)
+  # end 
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
