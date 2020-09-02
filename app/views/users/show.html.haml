@@ -4,3 +4,18 @@
       %h5.container-row__title= current_user.name
       %h6.container-row__subtitle= current_user.email
       = link_to 'ユーザー編集', edit_user_path
+    .contents.row
+      %p
+        = current_user.name
+        さんのいいねしたブログ一覧
+      - current_user.like_blogs.each do |blog|
+        %section
+          %ul.blogList
+            %li.blogList__image
+              = image_tag blog.image.url size: '220x150' 
+            %li.blogList__body
+              = blog.title
+            %li.blogList__author
+              = blog.user.name
+            %li
+              %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{blog.youtube_url}", :width => "360"}
