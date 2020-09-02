@@ -17,5 +17,9 @@
           %br/
           %i.fa.fa-image
           = f.file_field :image, class: "form-control__image"
+        .form-group
+          = f.label :video
+          = f.file_field :video, :accept => 'video/*'
+  
         %div
           = f.submit class: 'btn-success'

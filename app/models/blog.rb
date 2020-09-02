@@ -1,6 +1,7 @@
 class Blog < ApplicationRecord
   belongs_to :user
   mount_uploader :image, ImageUploader
+  mount_uploader :video, VideoUploader
   has_many :comments
   has_many :likes, dependent: :destroy
   # 記事が削除された時にいいねも削除されるように設定 

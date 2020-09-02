@@ -13,6 +13,10 @@
                 = blog.title
               %li.blogList__author
                 = blog.user.name
+              -# %li
+              -#   = link_to blog.video.to_s do
+              -#     = video_tag(blog.video.to_s)
+  
               %div{:id => "likes_buttons_#{blog.id}"}
                 = render partial: 'likes/like', locals: { blog: blog}
     = paginate @blogs
