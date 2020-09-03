@@ -13,9 +13,8 @@
                 = blog.title
               %li.blogList__author
                 = blog.user.name
-              -# = render 'blogs/tag_list', tag_list: blog.tag_list
               %li
-                %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{blog.youtube_url}", :width => "360"}
+                %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "215", :src => "https://www.youtube.com/embed/#{blog.youtube_url}", :width => "360"}
               %div{:id => "likes_buttons_#{blog.id}"}
                 = render partial: 'likes/like', locals: { blog: blog}
     = paginate @blogs
