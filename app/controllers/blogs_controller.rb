@@ -35,7 +35,6 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @comment = Comment.new
     @comments = @blog.comments.includes(:user).order(created_at: :desc)
-    @blog_tags = @blog.tags
   end
 
   def search
