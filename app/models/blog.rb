@@ -5,8 +5,6 @@ class Blog < ApplicationRecord
   has_many :comments
   has_many :likes, dependent: :destroy
   # 記事が削除された時にいいねも削除されるように設定 
-  # has_many :liked_users, through: :likes, source: :user
-  
   with_options presence: true do
     validates :title
     validates :body
@@ -19,4 +17,5 @@ class Blog < ApplicationRecord
       Blog.all
     end
   end
+
 end
