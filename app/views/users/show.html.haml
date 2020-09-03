@@ -7,7 +7,7 @@
     .contents.row
       %p
         = current_user.name
-        さんのいいねしたブログ一覧
+        さんのいいねしたお気に入りブログ一覧
       - current_user.like_blogs.each do |blog|
         %section
           %ul.blogList
