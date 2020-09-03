@@ -103,6 +103,7 @@ Association
 has_many :blogs
 has_many :likes
 has_many :like_blogs, through: :likes
+has_many :comments
 
 ## blogsテーブル
 
