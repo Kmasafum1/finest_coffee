@@ -4,10 +4,6 @@
       コーヒーの楽しさを知る
     .columns
       %h2 投稿一覧
-      タグリスト
-      - @tag_list.each do |list|
-        = link_to list.tag_name, search_blogs_path(blog_tag_id: list.id)
-        = "(#{list.blogs.count})"
       - @blogs.each do |blog|
         = link_to blog_path(blog.id) do
           %section

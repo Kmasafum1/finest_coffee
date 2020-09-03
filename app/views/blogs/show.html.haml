@@ -12,7 +12,6 @@
       %div{:id => "likes_buttons_#{@blog.id}"}
         = render partial: 'likes/like', locals: { blog: @blog}   
       %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{@blog.youtube_url}", :width => "360"}
-         
       - if @blog.user == current_user
         = link_to '編集', edit_blog_path(@blog), class: "btn btn-success"
         = link_to '削除', blog_path(@blog), method: :delete, class: "btn btn-danger"  
@@ -31,7 +30,7 @@
           - @comments.each do |comment|
             %p
               %strong
-                = link_to comment.user.name, "/users/#{comment.user_id}"
+                = link_to comment.user.name, "/users/#{comment.user_id}", class: "username"
                 ：
               = comment.text
     

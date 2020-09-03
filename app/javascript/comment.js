@@ -26,8 +26,5 @@ $(function(){
       $('.textbox').val('');
       $('.form__submit').prop('disabled', false);
     })
-    .fail(function(){
-      alert('error');
-    })
   })
 });
