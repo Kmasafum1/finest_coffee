@@ -20,5 +20,8 @@
         .form-group
           %strong Youtube url:
           = f.text_field :youtube_url, placeholder: "Youtube Url"
+        -# .form-group
+        -#   = f.label :tag_list
+        -#   = f.text_field :tag_list, value: @blog.tag_list.join(","), class: "form-control", placeholder: 'テキストを入力してください'   
         %div
           = f.submit class: 'btn-success'
