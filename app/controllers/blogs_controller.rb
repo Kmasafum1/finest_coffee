@@ -39,8 +39,6 @@ class BlogsController < ApplicationController
 
   def search
     @blogs = Blog.search(params[:keyword])
-    @tag_list = Tag.all  #こっちの投稿一覧表示ページでも全てのタグを表示するために、タグを全取得
-    # @blogs = @tag.blogs.all           #クリックしたタグに紐付けられた投稿を全て表示
     respond_to do |format|
       format.html 
       format.json 
