@@ -54,6 +54,8 @@ Devise.setup do |config|
   # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
+  config.omniauth :facebook,ENV['253688255761645'],ENV['acff5f9180e68525733aa4e1b7782cd5']
+  config.omniauth :google_oauth2,ENV['711400442985-p21r2coo4utoj2q8pnmg817el5n8v1hf.apps.googleusercontent.com'],ENV['eVDtGqhWEyrcVGlUjHkObXQk']
 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
