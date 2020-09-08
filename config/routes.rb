@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resource :user, except: [:new, :create, :destroy] 
   resources :blogs do
     resource :likes, only: [:create, :destroy]
+    resources :reviews, only: [:index, :create]
     resources :comments, only: [:create, :destroy]
     collection do
       get 'search'

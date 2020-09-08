@@ -1,4 +1,3 @@
-// トップページ
 $(function() {
   $(document).on("mouseover", "h3", "strong", function(){
     $(this).css({"color": "blue"});

@@ -1,0 +1,29 @@
+レビューを書く
+- if review.errors.any?
+  .notification
+    %h2
+      = review.errors.count
+      件のエラーがあります。
+    %ul
+      - review.errors.full_messages.each do |message|
+        %li= message
+.rating-box
+  = form_with model: review, url: blog_reviews_path(blog), local: true do |f|
+    .main-rating
+      .ratings
+        %span#star.fa.fa-star
+        %span#star.fa.fa-star
+        %span#star.fa.fa-star
+        %span#star.fa.fa-star
+        %span#star.fa.fa-star
+      .rating-value-display
+        %span#rating-value-display> 0
+        \/5
+    = f.hidden_field :blog_id, value: blog.id
+    = f.hidden_field :score, id: "rating-value"
+    = f.text_field :content, class: "textarea"
+    = f.submit "保存", class: "button"
+    %br/
+    = link_to "他のレビューを見る", blog_reviews_path(blog), class: "button"
+
+

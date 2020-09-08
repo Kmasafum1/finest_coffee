@@ -12,6 +12,7 @@ class User < ApplicationRecord
     #既にいいねしているかどうか
   end
   has_many :sns_credentials
+  has_many :reviews, dependent: :destroy
 
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first

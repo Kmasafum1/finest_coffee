@@ -33,5 +33,28 @@
                 = link_to comment.user.name, "/users/#{comment.user_id}", class: "username"
                 ：
               = comment.text
-    
+      -# .star-rating
+      -#   .star-rating-front
+      -#     = @blog.review_score_percentage 
+      -#     .rating-box
+      -#       .ratings
+      -#         %span#star.fa.fa-star  
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -#   .star-rating-back
+      -#     .rating-box
+      -#       .ratings
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -#         %span#star.fa.fa-star
+      -# .average-score-display
+      -#   = @blog.avg_score
+      -#   点
+      -#   = @blog.reviews.count
+      -#   件のレビュー
+      -# = render 'reviews/form', review: @review, blog: @blog
         
